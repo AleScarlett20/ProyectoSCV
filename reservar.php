@@ -8,6 +8,7 @@
 <body>
 	<?php
 	include("conexion.php");
+  
 	$nombre=(isset($_POST['nombre']))?$_POST['nombre']:"";
 	$sexo=(isset($_POST['sexo']))?$_POST['sexo']:"";
 	$participantes=(isset($_POST['participantes']))?$_POST['participantes']:"";
