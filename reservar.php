@@ -10,7 +10,7 @@
 	include("conexion.php");
 	$varNombre=$_POST['nombre'];
 	$varSexo=$_POST['sexo'];
-	$varParticipantes=$_POST['Participantes'];
+	$varParticipantes=$_POST['participantes'];
 	$varCorreo=$_POST['correo'];
 	$varTelefono=$_POST['telefono'];
     $varLugares=$_POST['lugares'];
