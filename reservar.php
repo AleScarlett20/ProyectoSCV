@@ -15,15 +15,10 @@
 	$telefono=(isset($_POST['telefono']))?$_POST['telefono']:"";
 	$lugares=(isset($_POST['lugares']))?$_POST['lugares']:"";
 
-	$sentenciaSQL= "INSERT INTO reservaciones (Nombre, Sexo, Participantes, Correo, Telefono, Lugares)
-	VALUES ('$nombre','$sexo','$participantes','$correo','$telefono','$lugares')";
+	$sentenciaSQL=$conexion->prepare("INSERT INTO reservaciones (Nombre, Sexo, Participantes, Correo, Telefono, Lugares)
+	VALUES ('$nombre','$sexo','$participantes','$correo','$telefono','$lugares')");
 
-	$almacenar=$conexion->query($sentenciaSQL);
-	if($almacenar){
-		echo("registro exitoso");
-	}else {
-		echo("error");
-	}
+	$sentenciaSQL->executable();
 	?>
 </body>
 </html>
