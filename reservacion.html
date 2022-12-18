@@ -28,50 +28,79 @@
     </div>
   </nav>
 </header>
-<body>
-    <div class="container col-sm-6">
-        <div class="row">
-            <div class="col-md-8 border-bottom">
-                <div class="card-body">
-                    <form id="form" action="reservar.php" method="POST" enctype="multipart/form-data">
-                        <div class="mb-3">
-                            <label for="texto1" class="form-label fs-4">Nombre</label>
-                            <input type="text" class="form-control" name="nombre" id="texto1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="texto1" class="form-label fs-4">Sexo</label>
-                            <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="sexo">
-                                <option selected>Selecciona una opción</option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Femenino</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="texto" class="form-label fs-4">Número de participantes</label>
-                            <input type="text" class="form-control" name="participantes" id="texto3">
-                        </div>
-                        <div class="mb-3">
-                             <label for="texto1" class="form-label fs-4">Correo electronico</label>
-                             <input type="email" class="form-control" name="correo" id="texto4">
-                        </div>
-                        <div class="mb-3">
-                            <label for="texto2" class="form-label fs-4">Número telefonico</label>
-                            <input type="tel" class="form-control" name="telefono" id="texto5">
-                        </div>
-                        <div class="mb-3">
-                            <label for="texto" class="form-label fs-4">Lugares seleccionados</label>
-                            <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="lugares">
-                                <option selected>Selecciona una opción</option>
-                                <option value="1">Parroquia Santa Barbara</option>
-                                <option value="2">Glorieta del tren</option>
-                                <option value="3">El Chute</option>
-                                <option value="4">Ayuntamiento de Santa Rosalía</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-dark" style="background-color: #A3E4D7;">Reservar</button>
-                    </form>
-                </div> 
+<body>   
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-header">
+                Datos para realizar reservación
             </div>
+            <div class="card-body">
+                <form id="form" action="reservar.php" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="texto1">Nombre</label>
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="texto1">Sexo</label>
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="sexo" id="sexo">
+                            <option selected>Selecciona una opción</option>
+                            <option value="1">Masculino</option>
+                            <option value="2">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="texto">Número de participantes:</label>
+                        <input type="text" class="form-control" name="participantes" id="participantes" placeholder="Participantes">
+                    </div>
+                    <div class="form-group">
+                         <label for="texto1">Correo electronico</label>
+                         <input type="email" class="form-control" name="correo" id="correo" placeholder="Correo">
+                    </div>
+                    <div class="form-group">
+                        <label for="texto2">Número telefonico</label>
+                        <input type="tel" class="form-control" name="telefono" id="telefono" placeholder="Telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="texto">Lugares seleccionados</label>
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="lugares" id="lugares">
+                            <option selected>Selecciona una opción</option>
+                            <option value="1">Parroquia Santa Barbara</option>
+                            <option value="2">Glorieta del tren</option>
+                            <option value="3">El Chute</option>
+                            <option value="4">Ayuntamiento de Santa Rosalía</option>
+                        </select>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="">
+                        <button type="submit" id="submit" value="Agregar" class="btn btn-success">Agregar</button>
+                        <button type="submit" name="accion" value="Modificar" class="btn btn-warning">Modificar</button>
+                        <button type="submit" name="accion" value="Cancelar" class="btn btn-info">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Sexo</th>
+                    <th>Participantes</th>
+                    <th>Correo electronico</th>
+                    <th>Numero telefonico</th>
+                    <th>Lugares seleccionados</th>  
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fulanito de Tal</td>
+                    <td>Masculino</td>
+                    <td>4</td>
+                    <td>alescarlett321@gmail.com</td>
+                    <td>6151137624</td>
+                    <td>Parroquia Santa Barbara</td>
+                </tr>
+            </tbody>
+            </table>
         </div>
     </div>
     <div class="row" style="background-color: #D1F2EB;">
