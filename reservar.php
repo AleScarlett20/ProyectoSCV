@@ -8,22 +8,22 @@
 <body>
 	<?php
 	include("conexion.php");
-	$varNombre=$_POST['nombre'];
-	$varSexo=$_POST['sexo'];
-	$varParticipantes=$_POST['Participantes'];
-	$varCorreo=$_POST['correo'];
-	$varTelefono=$_POST['telefono'];
-    $varLugares=$_POST['lugares'];
-	
-	$query = "INSERT INTO reservaciones (Nombre,Sexo,Participantes,Correo,Telefono,Lugares) 
-    VALUES('$varNombre','$varSexo','$varParticipantes','$varCorreo','$varTelefono','$varLugares')";
+	$nombre=(isset($_POST['nombre']))?$_POST['nombre']:"";
+	$sexo=(isset($_POST['sexo']))?$_POST['sexo']:"";
+	$participantes=(isset($_POST['participantes']))?$_POST['participantes']:"";
+	$correo=(isset($_POST['correo']))?$_POST['correo']:"";
+	$telefono=(isset($_POST['telefono']))?$_POST['telefono']:"";
+	$lugares=(isset($_POST['lugares']))?$_POST['lugares']:"";
 
-	$almacenar = $conexion -> query($query);
+	$sentenciaSQL= "INSERT INTO reservaciones (Nombre, Sexo, Participantes, Correo, Telefono, Lugares)
+	VALUES ('$nombre','$sexo','$participantes','$correo','$telefono','$lugares')";
+
+	$almacenar=$conexion->query($sentenciaSQL);
 	if($almacenar){
-		echo("Registro exitoso");
-	}else{
-		echo("No se pudieron almacenar los datos");
+		echo("registro exitoso");
+	}else {
+		echo("error");
 	}
-?>
+	?>
 </body>
 </html>
