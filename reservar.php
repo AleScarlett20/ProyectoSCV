@@ -15,7 +15,7 @@
 	$telefono=(isset($_POST['telefono']))?$_POST['telefono']:"";
 	$lugares=(isset($_POST['lugares']))?$_POST['lugares']:"";
 
-	$sentenciaSQL=$conexion->prepare("INSERT INTO reservaciones (Nombre, Sexo, Participantes, Correo, Telefono, Lugares)
+	$sentenciaSQL=$conexion->prepare ("INSERT INTO reservaciones (Nombre, Sexo, Participantes, Correo, Telefono, Lugares)
 	VALUES ('$nombre','$sexo','$participantes','$correo','$telefono','$lugares')");
 
 	$sentenciaSQL->executable();
